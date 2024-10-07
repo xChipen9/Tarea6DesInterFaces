@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Acceso</title>
+    <style>
+        form {
+    width: 300px;
+    margin: auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+}
+input {
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+}
+button {
+    padding: 10px;
+    width: 100%;
+    background-color: #79c036;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+h2 {
+    text-align: center;
+}
+h4 {
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+h5{
+    text-align: center;
+}
+.iniciarsesion {
+    padding: 10px;
+    width: 100%;
+    background-color: #36b0c0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.comprarPasaje {
+    padding: 10px;
+    width: 100%;
+    background-color: #f2e429;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.radio-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.procesarCompra{
+    padding: 10px;
+    width: 100%;
+    background-color: #ded87e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.matricularse{
+    padding: 10px;
+    width: 100%;
+    background-color: #f088f1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;  
+}
+
+.enviar{
+    padding: 10px;
+    width: 100%;
+    background-color: #fa0303;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;  
+}
+
+.reservar{
+    padding: 10px;
+    width: 100%;
+    background-color: #e55d1e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+.registrar{
+    padding: 10px;
+    width: 100%;
+    background-color: #fa1313;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.restablecer{
+    padding: 10px;
+    width: 100%;
+    background-color: #890303dc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.pedir{
+    padding: 10px;
+    width: 100%;
+    background-color: #6cdd42;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.comprar{
+    padding: 10px;
+    width: 100%;
+    background-color: #f540fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.registrar2{
+    padding: 10px;
+    width: 100%;
+    background-color: #7d0681;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <form action="login.php" method="POST">
+        <h2>Bienvenido al Peru Wellness</h2>
+        <label for="username">Nombre de Usuario</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required>
+        <button class="iniciarsesion" type="submit">Iniciar Sesión</button>
+    </form>
+
+    <br>
+
+    <form action="comprarTicket.php" method="POST">
+        <h2>Bienvenidos a Ryanair</h2>
+        <h4>Introduzca sus datos a continuación:</h4>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="class">Clase del Pasaje</label>
+        <br>
+        <select id="class" name="class">
+            <option value="0">VIP</option>
+            <option value="1">Especial</option>
+            <option value="2">Primera</option>
+            <option value="3">Segunda</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button class="comprarPasaje" type="submit">Comprar Pasaje</button>
+    </form>
+    <br>
+    <form action="process_purchase.php" method="GET">
+        <h2>Bienvenido a Amazon</h2>
+        <h4>Indica el artículo que desea comprar:</h4>
+        <label for="item">Nombre del Articulo</label>
+        <input type="text" id="item" name="item" required>
+    
+        <div class="radio-group">
+            <input class="radio1" type="radio" id="store_pickup" name="delivery" value="store" required>
+            <label class="radio-label" for="store_pickup">Recogida en Tienda</label>
+        </div>
+    
+        <div class="radio-group">
+            <input class="radio2" type="radio" id="home_delivery" name="delivery" value="home" required>
+            <label class="radio-label" for="home_delivery">Envío a Domicilio</label>
+        </div>
+    
+        <button class="procesarCompra" type="submit">Procesar Compra</button>
+    </form>
+    <br>
+    <form action="process_registration.php" method="POST">
+        <h2>Bienvenido a IES Ágora</h2>
+        <h4>Indica en que asignaturas deseas matricularte.</h4>
+        <label for="matricula">Numero de Matricula</label>
+        <input type="text" id="matricula" name="matricula" pattern="M\d{3}" required>
+
+        <label for="subjects">Materias</label>
+        <select id="subjects" name="subjects[]" multiple required>
+            <option value="Matematicas">DAW</option>
+            <option value="Algoritmia">DIW</option>
+            <option value="Sistemas">DWEC</option>
+            <option value="Robotica">DWES</option>
+            <option value="Robotica">EIE</option>
+        </select>
+        <br>
+        <br>
+        <button class="matricularse" type="submit">Matricularse</button>
+    </form>
+    <br>
+    <form action="contact_process.php" method="POST">
+        <h2>Bienvenido a Vodafone</h2>
+        <h3>¡Contacta con Nosotros!</h3>
+        <h4>Introduzca sus datos y en breve uno de nuestros agentes se pondrá en contacto con usted.</h4>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="10" cols="38" required></textarea>
+
+        <input type="hidden" name="source" value="página de contacto">
+        <br>
+        <br>
+        <button class="enviar" type="submit">Enviar</button>
+    </form>
+    <br>
+    <form action="process_reservation.php" method="POST">
+        <h2>Bienvenido a Kayak</h2>
+        <h4>Introduzca sus datos para confirmar la reserva.</h4>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="people">Número de Personas</label>
+        <input type="number" id="people" name="people" required>
+
+        <label for="start_date">Fecha de Entrada</label>
+        <input type="date" id="start_date" name="start_date" required>
+
+        <label for="end_date">Fecha de Salida</label>
+        <input type="date" id="end_date" name="end_date" required>
+        <br>
+        <button class="reservar" type="submit">Reservar</button>
+    </form>
+    <br>
+    <form action="register.php" method="POST">
+        <h2>Bienvenido a Prozis</h2>
+        <h4>¡Regístrate para poder acceder a un 10% de descuento en toda la web!</h4>
+        <label for="alias">Nombre</label>
+        <input type="text" id="alias" name="alias" placeholder="Tu nombre" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+
+        <label for="phone">Teléfono</label>
+        <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+
+        <input type="hidden" name="tipo-usuario" value="usuario-nuevo">
+
+        <button class="registrar" type="submit">Registrar</button>
+        <br>
+        <br>
+        <button class="restablecer" type="reset">Restablecer</button>
+    </form>
+    <br>
+    <form action="fruits_order.php" method="GET">
+        <h2>Bienvenido a Frutas Manzano</h2>
+        <h5>Elije el tipo de fruta que deseas comprar</h5>
+        <label for="fruit">Fruta</label>
+        <select id="fruit" name="fruit">
+            <option value="manzana">Manzana</option>
+            <option value="naranja">Naranja</option>
+            <option value="mandarina">Mandarina</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <br>
+        <label for="quantity">Cantidad</label>
+        <input type="text" id="quantity" name="quantity" pattern="\d+\s(ud|kg|gr)" placeholder="Ej: 1 ud, 2 kg, 100 gr" required>
+
+        <button class="pedir" type="submit">Pedir</button>
+    </form>
+    <br>
+    <form action="wine_order.php" method="GET">
+        <h2>Bienvenido a Bodegas Ruiz Torres</h2>
+        <h4>Elije el número de botellas</h4>
+        <label for="bottles">Número de Botellas</label>
+        <input type="number" id="bottles" name="bottles" step="3" min="3" required>
+
+        <button class="comprar" type="submit">Comprar</button>
+    </form>
+    <br>
+    <form action="register_programmer.php" method="POST">
+        <h2>Bienvenido a Udemy</h2>
+        <h4>¡Disfruta de todos nuestros cursos sobre Programación!</h4>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required>
+
+        <fieldset>
+            <legend>Lenguajes de Programación</legend>
+            <div class="radio-group">
+                <input class="radio1" type="radio" id="store_pickup" name="delivery" value="store" required>
+                <label class="radio-label" for="store_pickup">Lenguaje JavaScript</label>
+            </div>
+        
+            <div class="radio-group">
+                <input class="radio2" type="radio" id="home_delivery" name="delivery" value="home" required>
+                <label class="radio-label" for="home_delivery">Lenguaje PHP</label>
+            </div>
+            <div class="radio-group">
+                <input class="radio1" type="radio" id="store_pickup" name="delivery" value="store" required>
+                <label class="radio-label" for="store_pickup">Lenguaje Phyton</label>
+            </div>
+        
+            <div class="radio-group">
+                <input class="radio2" type="radio" id="home_delivery" name="delivery" value="home" required>
+                <label class="radio-label" for="home_delivery">Lenguaje Java</label>
+            </div>
+        </fieldset>
+        <br>
+        <label for="english">Nivel de Inglés</label>
+        <select id="english" name="english">
+            <option value="bajo">Bajo</option>
+            <option value="medio">Medio</option>
+            <option value="alto">Alto</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <br>
+        <label for="city">Ciudad (Opcional)</label>
+        <input type="text" id="city" name="city">
+
+        <label for="phone">Teléfono (Opcional)</label>
+        <input type="tel" id="phone" name="phone">
+
+        <button class="registrar2" type="submit">Registrar</button>
+    </form>
+</body>
+</html>
